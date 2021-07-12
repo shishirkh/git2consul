@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: git2consul
+  name: git2consul
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: git2consul
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: git2consul
+    spec:
+      containers:
+      - image: shishirkhandelwal/git2consul:0.1
+        name: git2consul
+        command: ["/bin/sh","-c","sleep 40000"]
+        resources: {}
+status: {}

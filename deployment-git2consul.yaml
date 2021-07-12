@@ -18,8 +18,16 @@ spec:
         app: git2consul
     spec:
       containers:
-      - image: shishirkhandelwal/git2consul:0.1
+      - image: shishirkhandelwal/git2consul:0.2
         name: git2consul
         command: ["/bin/sh","-c","sleep 40000"]
         resources: {}
+        volumeMounts:
+        - name: configuration
+          mountPath: /tmp/configuration.json
+          subPath: configuration.json
+      volumes:
+      - name: configuration
+        configMap:
+          name: configuration-file
 status: {}

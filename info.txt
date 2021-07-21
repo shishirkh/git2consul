@@ -1,4 +1,0 @@
-git2consul --endpoint 192.168.49.2 --port 32458 --config-file  /tmp/configuration.json
-git2consul --endpoint 192.168.49.2 --port 31651 --config-file /tmp/git2consul.json
-git2consul --endpoint 192.168.49.2 --port 31651 --config-file /tmp/configuration.json
-

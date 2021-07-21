@@ -1,16 +1,31 @@
 apiVersion: v1
 data:
-  configuration.json: |
+  configuration.json: |+
     {
       "version": "1.0",
       "no_daemon": true,
       "repos" : [{
-        "name" : "sample_configuration",
-        "url" : "https://github.com/ryanbreen/git2consul_data.git",
-        "branches" : ["dev"]
+        "name" : "test1",
+        "url" : "https://github.com/shishirkh/git2consul.git",
+        "branches" : ["main"],
+        "source_root": "samples/",
+        "expand_keys": true,
+        "mountpoint": "mount1",
+        "include_branch_name" : true
+      },
+      {
+        "name" : "test2",
+        "url" : "https://github.com/shishirkh/git2consul.git",
+        "branches" : ["dev"],
+        "source_root": "samples2/",
+        "expand_keys": true,
+        "mountpoint": "mount2",
+        "include_branch_name" : true
       }]
     }
+
 kind: ConfigMap
 metadata:
   creationTimestamp: null
   name: configuration-file
+

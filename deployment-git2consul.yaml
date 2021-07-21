@@ -20,8 +20,15 @@ spec:
       containers:
       - image: shishirkhandelwal/git2consul:0.2
         name: git2consul
-        command: ["/bin/sh","-c","sleep 40000"]
+        command: ["/bin/sh","-c","git2consul --config-file $(CONFIGURATION_FILE)"]
         resources: {}
+        env:
+        - name: CONSUL_ENDPOINT
+          value: "192.168.49.2"
+        - name: CONSUL_PORT
+          value: "32458"
+        - name: CONFIGURATION_FILE
+          value: "/tmp/configuration.json"
         volumeMounts:
         - name: configuration
           mountPath: /tmp/configuration.json

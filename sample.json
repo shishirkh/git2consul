@@ -1,0 +1,23 @@
+{
+  "version": "1.0",
+  "no_daemon": true,
+  "repos" : [{
+    "name" : "test1",
+    "url" : "https://github.com/shishirkh/git2consul.git",
+    "branches" : ["main"],
+    "source_root": "samples/",
+    "expand_keys": true,
+    "mountpoint": "mount1",
+    "include_branch_name" : true
+  },
+  {
+    "name" : "test2",
+    "url" : "https://github.com/shishirkh/git2consul.git",
+    "branches" : ["dev"],
+    "source_root": "samples2/",
+    "expand_keys": true,
+    "mountpoint": "mount2",
+    "include_branch_name" : true
+  }]
+}
+
